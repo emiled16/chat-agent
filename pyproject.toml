@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "chat-agent"
+version = "0.1.0"
+description = ""
+authors = ["Emile Dimas <emile.dimas@maxa.ai>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pydantic = "^2.9.2"
+fastapi = "^0.115.0"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.6.8"
+pytest = "^8.3.3"
+jupyterlab = "^4.2.5"
+pre-commit = "^3.8.0"
+commitizen = "^3.29.1"
+
+[tool.ruff]
+select = ["ALL"]
+ignore = [
+    # Groups
+    "D",   # docs lints
+    "FA",  # __future__ annotations
+    "TD",  # TODO format
+    "FIX", # TODO and FIXME 
+    "TCH", # TYPE_CHECKING block
+    "EM",  # Error message in separate line
+    # Rules
+    "TRY003", # Error message in separate line
+    "ANN101", # type hint on self
+    "ANN401", # Any for kwargs
+    "RUF012", # ClassVar on class variables
+    "S101",   # forbid assert
+    "RUF001", # ambiguous unicode character
+]
+line-length = 120
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
